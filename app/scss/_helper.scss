@@ -76,7 +76,7 @@ html{
 //--------------------Parag-MARGIN
 
 
-@for $i from 0 through 12 {
+@for $i from 0 through 3 {
 	.parag-m-h-#{5*$i} { 
 		p{
 			margin-left: 5*$i+px;
@@ -84,7 +84,7 @@ html{
 		}
 	}
 }
-@for $i from 0 through 12 {
+@for $i from 0 through 3 {
 	.parag-m-v-#{5*$i} { 
 		p{
 			margin-top: 5*$i+px;
@@ -385,6 +385,7 @@ html{
 
 .vam{
 	vertical-align: middle;
+	display: inline-block;
 }
 .vam-table{
 	display: table-cell;

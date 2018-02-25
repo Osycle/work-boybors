@@ -299,8 +299,8 @@ $(function(){
 	  	if( revSlider )
 		   revSlider.revolution({
 					delay:6000,
-					startwidth: checkSm() ? $( window ).width() : checkMd() ? 970 : 1170,
-					startheight: checkSm() ? 450 :  bannerSlider ? 700 : $( window ).height(),
+					startwidth: checkSm() ? $( window ).width(): 1170,
+					startheight: checkSm() ? 450 :  bannerSlider ? 500 : $( window ).height(),
 					autoHeight:"off",
 					fullScreenAlignForce:"off",
 
@@ -315,13 +315,13 @@ $(function(){
 					hideArrowsOnMobile:"on",
 					hideThumbsUnderResoluition:0,
 
-					hideThumbs: -1,
+					hideThumbs: 100,
 					hideTimerBar:"on",
 
 					keyboardNavigation:"off",
 
 					navigationType:"none",
-					navigationArrows:"none",	//solo
+					navigationArrows:"solo",
 					navigationStyle:"round",
 
 					navigationHAlign:"center",
@@ -354,18 +354,18 @@ $(function(){
 
 					fullWidth:"off",
 					fullScreen:"off",
-					fullScreenOffsetContainer: "#header",
+					fullScreenOffsetContainer: "",
 
 					dottedOverlay:"none",
 					forceFullWidth:"off",
 
 		      shadow:0
 
-		    }).find("li").click(function(){ revSlider.revnext() })
-			
+		    }) 
+
 
 		});
-
+		$(".tparrows").append('<svg viewBox="0 0 100 100"><path d="M 0,50 L 60,100 L 60,95 L 15,50  L 60,5 L 60,0 Z" class="arrow"></path></svg>')
 
 	});
 }) (jQuery);
