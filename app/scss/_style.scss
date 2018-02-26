@@ -70,7 +70,7 @@ $color-gray_3: #212121;
 		}
 	}
 }
-@mixin align-cells( $width: 75, $item: 3, $style: block, $tag: figure ) {
+@mixin align-cells( $width: 75, $item: 3, $style: table, $tag: figure ) {
 
 	$mrow : ( (100 - $width)/($item*2) )+%;
 	
@@ -578,49 +578,6 @@ img[auto]{
 //--bg--
 
 
-.bg-hill{
-	width: 100%;
-	position: absolute;
-	//background-color: brown;
-	background-color: white;
-	height: 180px;
-	&.top{
-		top: -179px;
-		clip-path: polygon(0 0, 110% 100%, 0 100%);
-	}
-	&.down{
-		bottom: -179px;
-		clip-path: polygon(110% 0, 0 0, 0 100%);
-	}
-}
-
-
-
-
-
-.tp-form-control{
-	display: block;
-  width: 100%;
-  padding: 6px 12px;
-  font-size: 0.9em;
-  border: 1px solid transparent;
-  //box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  transition: all 0.3s ease-in-out;
-  &:focus{
- 		border-color: $color-1;
-  	outline: 0;
-  	//box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba($color-4, 0.8);
-  }
-  &[disabled]{
-		cursor: not-allowed;  
-	}
-	&::-moz-placeholder { color: #999999;opacity: 1; }
-	&:-ms-input-placeholder { color: #999999; }
-	&::-webkit-input-placeholder { color: #999999; }
-	&::-ms-expand { border: 0;background-color: transparent; }
-
-}
-
 
 
 
@@ -828,9 +785,12 @@ $header-min-menu: 100px;
 	}
 
 	.fa{
-		font-size: 23px;
-    color: #2d6eb7;
-    vertical-align: sub;
+		position: absolute;
+    margin-left: 10px;
+    margin-top: -3px;
+
+		font-size: 18px;
+    color: $color-1;
 	}
 
 
@@ -983,8 +943,6 @@ $header-min-menu: 100px;
 			margin-top: 25%;
 			margin-bottom: 5%;
 		}
-
-	
 	.btn{
 		background-color: transparent;
 		position: relative;
@@ -1021,9 +979,6 @@ $header-min-menu: 100px;
 }
 
 
-.modal-backdrop{
-	//background-color: rgba( white, 0.7 );
-}
 .modal-content{
 	background: rgba(white, 1);
 	color: black;
@@ -1120,34 +1075,6 @@ $header-min-menu: 100px;
 
 
 
-//BANNER
-
-#banner{
-	@extend .bg-cover;
-	transition: all 3s ease-out;
-	color: white;
-	overflow: hidden;
-	background-position: 0 0;
-	background-repeat: repeat-y;
-	background-size: cover;
-	
-}
-.banner-content{
-	position: relative;
-	.breadcrumb{
-		padding: 0;
-	}
-}
-.banner-shadow{
-
-	background: linear-gradient(to left, $color-1 ,rgba($color-4, 0.3) );
-	height: 100%;
-	position: absolute;
-	display: block;
-	float: left;
-	width: 100%;
-
-}
 
 
 // BREADCRUMP
@@ -1484,114 +1411,31 @@ a[target="_blank"]{
 
 
 
-.short-services{
-	position: relative;
-	.wrapper-bg{
-		@extend .fuller;
-		pointer-events: none;
-		opacity: 0.05;
-		background-size: 100%;
-		background-image: url("../img/other/texture-1.png");
-	}
-}
-.short-services-items{
-
-	@include align-cells( 70, 3, table );
-	figure{
-		padding: 0 15px 20px;
-	}
-	.img-content{
-		margin: auto;
-		clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
-		width: 250px;
-		height: 250px;
-		img{
-			width: 100%;
-		}
-		background-position: center center;
-	}
-	.desc-content{
-		margin: 15px 0;
-	}
+//short-productions
+.short-productions{
 
 }
-
-
-
-
-
-
-.short-tour{
-	position: relative;
-	background-color: $color-1;
-	.wrapper-bg{
-		@extend .fuller;
-		opacity: 0.2;
-		background-size: 100%;
-		filter: invert(1);
-		pointer-events: none;
-		background-image: url("../img/other/texture-1.png");
-	}
-	.text-content{
-		color: white;
-	}
-}
-
-.short-tour-items{
-	text-align: center;
-	$width: 650;
-	height: ($width+40)+px;
-	position:relative;
-	@extend .letter-none;
+.short-productions-items{
+	@include align-cells( 100, 3, table );
 	figure{
-		@extend .letter-none;
-		pointer-events: none;
-		//width: 50%;
-		//height: 250px;
-		display: inline-block;
-		position: relative;
-		padding: 20px;
-		top: ($width/4)+px;
-		.img-content{
+		min-height: 110px;
+		padding: 10px 15px;
+		border-right: 1px solid gray;
+		border-bottom: 1px solid gray;
+		&::nth-child(3n+3){
+			border-right: 0;
+		}
+		&:nth-child(3n):nth-last-child(-n+4){
+			//border-bottom: 0px;
+		}
 
-			background-position:center;
-			background-size: cover;
-			clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-			width: ( ($width/2)-10)+px;
-			height: ( ($width/2)-10)+px;
-			margin: auto;
-		}
-		.btn-def, .cell-hover{
-			pointer-events: auto;
-		}
-		.cell-hover{
-			padding: 0 10%;
-		}
-		a{
-
-		}
-	}
-	figure{
-		&:first-child, &:last-child{
-			width:100%;
+		.btn-def{
 			position: absolute;
-			top: ($width/4)+px;
-			left: 0;
+			bottom: 5px;
 		}
-		&:nth-child(2){
-			left:0;
+		.desc-content{
+			min-height: inherit;	
 		}
-		&:nth-child(3){
-			right:0;
-		}
-
-		&:first-child{
-			 transform: translateY(50%);
-		}
-		&:last-child{
-			 transform: translateY(-50%);
-		}
-
 	}
 }
 
