@@ -7,7 +7,7 @@
 */
 
 $color-1: #83c00c;	// SALAT
-$color-2: #0F1B29;	// BLUE-DARK
+$color-2: #418237;	// GREEN
 $color-3: #19204A;	// BLUE-DARK
 $color-4: #ffa800;	// LIGHT ORANGE
 $color-5: #008CC7;	// LIGHT ORANGE
@@ -639,6 +639,7 @@ $header-min-menu: 100px;
 	right: 0;
 	left: 0;
 	//position: absolute;
+	position: relative;
 	background-color: white;
 	//color: black;
 	@media (max-width: 991px){
@@ -711,6 +712,7 @@ $header-min-menu: 100px;
     border-radius: 5px;
 	}
 	input{
+		padding-right: 40px;
 		min-width: 90px;
 		&:focus{
 			border-color: $color-1;
@@ -762,10 +764,8 @@ $header-min-menu: 100px;
 	ul:not([class*="sub-menu"]){
 		@extend .letter-none;
 		& > li{
-			//display: inline-block;
 			position: relative;
 			border-right: 1px solid rgba(white, 0.3);
-			//margin: 15px 0;
 			&:last-child{
 				border: 0;
 			}
@@ -796,8 +796,9 @@ $header-min-menu: 100px;
 
 	.sub-menu-1{
 		padding: 3px 5px;
-		//width: 200px;
 		position: relative;
+		background-color: $color-1;
+		color: white;
 		li{
 			text-align: left;
 			width: 100%;			
@@ -805,31 +806,32 @@ $header-min-menu: 100px;
 		a{
 			display: block;
 			transition: all 0.3s ease-in-out;
-			color: gray;
 			padding: 10px 5px;
 			white-space: nowrap;
 			&:hover{
 				text-decoration: underline;
 			}
 		}
-
 	}
 
 	[class*="sub"]{
 		visibility:  hidden;
 		position: absolute;
 		transition: all 0.3s ease-in-out;
-		transform: matrix(1,0,0,1,0,10);
+		transform: matrix(1, 0, 0, 1, 0, 10);
 		font-size: 0.9em;
 		font-weight: 500;
 		z-index: 1;
 		color: inherit;
-		background-color:  white;
 		opacity: 0;
 		transform-origin: 40% 0;
 	}
 
-
+	.fa{
+		font-size: 23px;
+    color: #2d6eb7;
+    vertical-align: sub;
+	}
 
 
 
@@ -887,21 +889,22 @@ $header-min-menu: 100px;
 }
 .mm-menu{
 	.icon-bar{
-		transform-origin: 33%;
+		transform-origin: center;
+		margin: 0;
 		&:nth-child(1){
 			transform: rotate(45deg);
 		}
 		&:nth-child(2){
 			transform: rotate(-45deg);
 		}
-
 	}
 }
 .mm-navbar{
 	position: relative;
 	.close-btn{
 		position: absolute;
-		top: 10px;
+		top: 30px;
+		width: 40px;
 		right: 20px;
 		font-size: 60px;
 		opacity: 0.8;
@@ -994,7 +997,7 @@ $header-min-menu: 100px;
     top: 0;
     z-index: 1;
     border-radius: 0 5px;
-  	&:active{
+  	&:focus, &:active{
   		outline: none;
 			box-shadow: none;
 		}
@@ -1048,27 +1051,14 @@ $header-min-menu: 100px;
 
 
 
-.bid-modal{
+.form-modal{
+
 	h1, h2, h3{
 		color: $color-1;
 	}
 
-	button{
-		background-color: $color-1;
-	}
 	form{
 		margin-top: -20px;
-		.input__field--chisato:focus, .input--filled .input__field--chisato{
-			border-color: $color-1;
-		}
-		.input__label-content--chisato::after{
-			color: $color-1;
-		}
-		.input{
-			font-size: 1.2em;
-			margin: 0.8em 1em;
-			max-width: 100%;
-		}
 		.textarea{
 			display: block;
 			margin-top: 10px;
@@ -1092,15 +1082,23 @@ $header-min-menu: 100px;
 				}
 			}
 		}//textarea
-
-
-
+	}
+	input, textarea{
+		border: 1px solid rgba($color-1, 0.5);
+		border-radius: 1px;
+		width: 100%;
+		&:focus{
+			border-color: $color-1;
+		}
+	}
+	button{
+		background-color: $color-1;
 	}
 
 	.modal-content{
 		color: $color-1;
 		margin-top: 70px;
-
+		background-image: url( "../img/other/texture-1.png" ) ;
 		@media only screen and (max-width: 991px){
 			width: 100%;
 		}
@@ -1316,6 +1314,7 @@ a[target="_blank"]{
 .rev-slider{
 	//overflow: hidden;
 	background-color: black;
+	touch-action: auto !important;
 	.container{
 		//position: relative;
 		display: block;
@@ -1636,9 +1635,7 @@ a[target="_blank"]{
 
 #footer{
 	position: relative;
-	background-color: black;
-	color: white;
-	min-height: 400px;
+	//min-height: 400px;
 	background-repeat: no-repeat;
 	background-position-y: bottom;
 	p{
@@ -1646,55 +1643,21 @@ a[target="_blank"]{
 	}
 
 }
+
 .footer-menu{
-	li{
-		//width: 50%;
-		margin: 5px 0;
-		a{
-			padding: 5px 15px;
-		}
-		transition: all 0.3s ease-in-out;
-		&:hover{
-			color: $color-1;
+	li{	
+		display: inline-block;
+		&:not(:last-child):after{
+			content: " / "
 		}
 	}
 }
-.footer-contacts{
-	h3{
-		font-size: 1em;
-		font-weight: 600;
-		text-transform: uppercase;
+
+.soc-footer{
+	li img{
+		width: 35px;
 	}
 }
-.footer-logo{
-	width: 150px;
-}
-.footer-feedback{
-	input, textarea{
-		border: 0;
-		border-radius: 15px;
-		padding: 15px;
-		width: 100%;
-		margin: 15px 0;
-		background-color: rgba( white, 0.05 );
-		@include placeholder( rgba( white, 0.2 ) ) ;
-
-		transition: all 0.3s ease-in-out;
-		&:focus{
-			@include placeholder( rgba( white, 0.8 ) ) ;
-		}
-	}
-
-
-	input{
-		height: 40px;
-	}
-	textarea{
-		height: 150px;
-	}
-}
-
-
 /*
 										 --- OTHER ---
 */

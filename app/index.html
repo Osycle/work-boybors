@@ -28,6 +28,46 @@
 
 
 
+	<!-- FORM MODAL -->
+	<div class="form-modal modal fade animated" id="formModal" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<button type="button" class="btn" data-dismiss="modal"><span class="icon-bar"></span><span class="icon-bar"></span></button>
+
+				<div class="modal-body">
+
+					 <!-- success-info -->
+					<div class="col-md-12 success-info m-b-30 align-center">
+						<font color="red"><div class="info-suc" id=""></div></font>
+						<font color="green"><div class="info-err" id=""></div></font>
+					</div>
+
+					<form  method="POST" action="">
+					
+						<h3>Связаться с нами</h3>
+
+						<!-- NAME -->
+						<label for="input-1">
+							<span data-content="Имя, фамилия">Имя, фамилия</span>
+						</label>
+						<input type="text" class="form-control" name="name">
+
+						<!-- TEL -->
+						<label for="input-3">
+							<span data-content="Номер телефона">Номер телефона</span>
+						</label>
+						<input type="text" class="form-control" name="tel">
+						<br>
+						<div class="form-footer">
+							<button type="submit" class="align-right btn-def color-white submit"><b>Отправить</b></button>
+						</div>
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
 
 	<!-- HEADER -->
 	<div class="header-hidden"></div>
@@ -49,10 +89,9 @@
 					</div>
 					<div class="header-btn pie-md-elastic-1 p-h-10">
 						<span class="btn-def">
-							<a class="" href="">Бесплатная консультация</a>
+							<a data-toggle="modal" data-target="#formModal" role="button">Бесплатная консультация</a>
 						</span>
-					</div>
-
+					</div>							
 					<div class="phones-first pie-md-elastic-10 p-h-10 color-gray">
 						<p>Ваш менеджер в: г. Ташкент</p>
 						<p>Сайдуллаев Шерзод:<span class="color-1" underline> +998 (90) 900 90 15</span></p>
@@ -92,7 +131,13 @@
 				<nav>
 					<ul>
 						<li><a href="productions.html">Прокуция</a></li>
-						<li><a href="news.html">Новости</a></li>
+						<li><a href="news.html">Новости<i class="fa fa-angle-down"></i></a>
+							<ul class="sub-menu-1">
+							    <li><a href="" title="">Sub menu 1</a></li>
+							    <li><a href="" title="">Sub menu 2</a></li>
+							    <li><a href="" title="">Sub menu 3</a></li>
+							</ul>
+						</li>
 						<li><a href="pricelist.html">Цены</a></li>
 						<li><a href="useful.html">Полезно</a></li>
 						<li><a href="reviews.html">Отзывы</a></li>
@@ -106,17 +151,15 @@
 		<!-- MIN MENU -->
 		<div id="min-menu">
 			<ul>
-				<li><a href="index.html">Главная</a></li>
-				<li><a href="about.html">О комании</a>
-					<ul class='sub-menu-1'>
-						<li><a href="about-nexsus.html">Nexsus c&s</a></li>
-						<li><a href="about-orient.html">Orient construction</a></li>
-					</ul>
-				</li>
-				<li><a href="services.html">Услуги</a></li>
-				<li><a href="contacts.html">Контакты</a></li>
+				<li><a href="productions.html">Прокуция</a></li>
+				<li><a href="news.html">Новости</a></li>
+				<li><a href="pricelist.html">Цены</a></li>
+				<li><a href="useful.html">Полезно</a></li>
+				<li><a href="reviews.html">Отзывы</a></li>
+				<li><a href="contacts.html">Контакты</a></li>>
 			</ul>
 		</div>
+
 		<!-- MIN MENU HEADER -->
 		<div class="min-menu-header hidden-md hidden-lg">
 			<div class="col-xs-6">
@@ -211,8 +254,8 @@
 									</div>
 								</div>
 							</div>
-
 						</li>
+
 						<li data-transition="slotslide-horizontal" data-masterspeed="2000">
 						
 							<img src="img/slider/slide-1.jpg">
@@ -258,7 +301,6 @@
 									</div>
 								</div>
 							</div>
-
 						</li>
 						
 
@@ -275,190 +317,36 @@
 
 
 
-		<div class="search row">
-			<div class="container">
-					<div class="search-content">
-						<div class="wrapper"></div>
-						<form action="" method="post" accept-charset="utf-8">
-							<input class="form-control" type="text" name="search" placeholder="Поиск по турам">
-							<div class="btn-content">
-								<button type="submit"><i class="fa fa-search"></i> найти</button>
-							</div>
-						</form>
-					</div>
-			</div>
-		</div>
-
-		<div class="row short-services p-t-75">
-			<div class="wrapper-bg"></div>
-			<div class="container align-center">
-				<h1>Наши услуги</h1>
-				<p>Мы готовы предоствить вам</p>
-
-				<div class="clearfix m-v-30 short-services-items m-t-60">
-
-					<figure>
-						<div class="img-content" style="background-image: url('img/services/short-1.jpg');"></div>
-						<div class="desc-content">
-							<h4>Lorem Ipsum</h4>
-							<p>Бронирование гостинц любой сложности это же arc osiyo lorem ipsum</p>
-						</div>
-					</figure>
-					<figure>
-						<div class="img-content" style="background-image: url('img/services/short-2.jpg');"></div>
-						<div class="desc-content">
-							<h4>Lorem Ipsum</h4>
-							<p>Бронирование гостинц любой сложности это же arc osiyo lorem ipsum</p>
-						</div>
-					</figure>
-					<figure>
-						<div class="img-content" style="background-image: url('img/services/short-3.jpg');"></div>
-						<div class="desc-content">
-							<h4>Lorem Ipsum</h4>
-							<p>Бронирование гостинц любой сложности это же arc osiyo lorem ipsum</p>
-						</div>
-					</figure>
-					<figure>
-						<div class="img-content" style="background-image: url('img/services/short-4.jpg');"></div>
-						<div class="desc-content">
-							<h4>Lorem Ipsum</h4>
-							<p>Бронирование гостинц любой сложности это же arc osiyo lorem ipsum</p>
-						</div>
-					</figure>
-					<figure>
-						<div class="img-content" style="background-image: url('img/services/short-5.jpg');"></div>
-						<div class="desc-content">
-							<h4>Lorem Ipsum</h4>
-							<p>Бронирование гостинц любой сложности это же arc osiyo lorem ipsum</p>
-						</div>
-					</figure>
-
-				</div>
-
-			</div>
-		</div>
 
 
 
 
-		<div class="row short-tour">
-			<div class="wrapper-bg"></div>
-			<div class="container">
-				
-				<div class="clearfix m-v-30">
-					<div class="text-content pie-md-4">
-						<h1>Туры по Узбекистану</h1>
-						<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum </p>
-					</div>
-
-					<div class="pie-md-8">
-						<div class="short-tour-items">
-
-							<figure>
-								<a href="tour-article.html" title="">
-									<div class="img-content hover-content" style="background-image: url('img/tour/short-1.jpg');">
-										<div class="cell-hover">
-											<div>
-												<h4>Lorem Ipsum</h4>
-												<p>Бронирование гостинц любой сложности это же arc osiyo lorem ipsum</p>
-												<span class="btn-desc box-50">
-													<span class="btn-def box-60 m-auto p-v-10 m-t-10">Подробнее</span>
-												</span>
-											</div>
-										</div>
-									</div>
-								</a>
-							</figure>
-							<figure>
-								<a href="tour-article.html" title="">
-									<div class="img-content hover-content" style="background-image: url('img/tour/short-2.jpg');">
-										<div class="cell-hover">
-											<div>
-												<h4>Lorem Ipsum</h4>
-												<p>Бронирование гостинц любой сложности это же arc osiyo lorem ipsum</p>
-												<span class="btn-desc box-50">
-													<span class="btn-def box-60 m-auto p-v-10 m-t-10">Подробнее</span>
-												</span>
-											</div>
-										</div>
-									</div>
-								</a>
-							</figure>
-							<figure>
-								<a href="tour-article.html" title="">
-									<div class="img-content hover-content" style="background-image: url('img/tour/short-3.jpg');">
-										<div class="cell-hover">
-											<div>
-												<h4>Lorem Ipsum</h4>
-												<p>Бронирование гостинц любой сложности это же arc osiyo lorem ipsum</p>
-												<span class="btn-desc box-50">
-													<span class="btn-def box-60 m-auto p-v-10 m-t-10">Подробнее</span>
-												</span>
-											</div>
-										</div>
-									</div>
-								</a>
-							</figure>
-							<figure>
-								<a href="tour-article.html" title="">
-									<div class="img-content hover-content" style="background-image: url('img/tour/short-4.jpg');">
-										<div class="cell-hover">
-											<div>
-												<h4>Lorem Ipsum</h4>
-												<p>Бронирование гостинц любой сложности это же arc osiyo lorem ipsum</p>
-												<span class="btn-desc box-50">
-													<span class="btn-def box-60 m-auto p-v-10 m-t-10">Подробнее</span>
-												</span>
-											</div>
-										</div>
-									</div>
-								</a>
-							</figure>
 
 
-						</div>
+
+
+
+
+
+
+
+
+
+		<div class="main-content index list-style-1 inside align-center-sm">
+
+
+
+			<div class="row short-services p-t-75">
+				<div class="container">
+
+					<div class="clearfix m-v-30 short-services-items m-t-60">
+
+						
+
 					</div>
 
 				</div>
-
 			</div>
-		</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		<div class="main-content list-style-1 inside align-center-sm">
-
-
-
-
-
-
 
 
 
@@ -491,63 +379,49 @@
 
 
 	<!-- FOOTER -->
-	<footer id="footer" class="container-fluid align-center-sm">
+	<footer id="footer" class="container-fluid bg-color-white color-black align-center-sm">
 		<div class="container">
-			<div class="footer-content p-v-30 clearfix color-white row">
+			<div class="footer-content p-v-30 clearfix row">
 
-				<div class="col-md-4 p-h-15">
-					<div class="footer-logo m-v-30 m-auto">
-						<img src="img/logo.svg">
-					</div>
-					<div class="footer-desc m-v-30">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed iaculis nisi vel purus sollicitudin, et vehicula nibh consectetur. Mauris cursus urna eu sem dignissim elementum id eu odio. Fusce pretium augue nunc, sodales luctus lacus convallis a. Nullam vulputate urna vulputate diam ullamcorper, sit amet varius dolor lobortis. Donec maximus ante et libero</p>
-					</div>
-				</div>
 
-				<div class="col-md-2">
-					<div class="footer-menu col-md-12 m-v-30 hidden-xs">
+				<div class="pie-md-5 p-h-15">
+					<div class="footer-menu m-b-30 color-1 hidden-xs">
 						<ul>
-								<li><a href="index.html">Главная</a></li>
-								<li><a href="about.html">О нас</a></li>
-								<li><a href="services.html">Услуги</a></li>
-								<li><a href="tour.html">Туры по Узбекистану</a></li>
-								<li><a href="partners.html">Партнеры</a></li>
+								<li><a href="about.html">О заводе</a></li>
+								<li><a href="services.html">Продукция</a></li>
+								<li><a href="pricelist.html">Цены</a></li>
+								<li><a href="useful.html">Полезно</a></li>
+								<li><a href="reviews.html">Отзывы</a></li>
 								<li><a href="contacts.html">Контакты</a></li>
 						</ul>
 					</div>
+					<div class="copyright color-gray">
+						<p>© 2003 - <time id="copydate">2018</time>. ООО "BoyBors Enginering"</p>
+            <script>copydate.innerText = new Date().getFullYear()</script>
+					</div>
 				</div>
 
-				<div class="col-md-3 p-h-15 align-center footer-contacts m-v-30">
-					<div class="phones col-xs-12">
-						<i class="fa fa-phone vam hidden-xs hidden-sm color-1"></i>
-						<span class="vam inline-block p-l-15">
-							<p class="phone"><span class="color-1">+998 (90) 991 50 21</span></p>
-							<p class="phone-desc">Бесплатно <span underline>по Узбекистану<span></p>
-						</span>
-					</div>
-					<div class="soc col-xs-12 m-v-15">
+				<div class="pie-md-4 footer-contacts p-h-15 m-v-30">
+					<p>
+						456216, Россия, Челябинская область,
+						г. Златоуст, ул. Суворова, д. 57
+						<strong><big>+998 (91) 190 09 01</big></strong> <a href="mailto:info@boybors.ru" underline	>info@boybors.ru</a>
+					</p>		
+				</div>
+
+				<div class="pie-md-3 footer-feedback p-h-15 m-v-30">
+					<div class="soc-footer col-xs-12 li-inline-block m-v-15">
+						<h3><strong>Мы в социальных сетях</strong></h3>
+						<br>
 						<ul>
-						    <li><a href="" title="В контакте"><i class="fa fa-vk"></i></a></li>
-						    <li><a href="" title="Фейсбук"><i class="fa fa-facebook"></i></a></li>
-						    <li><a href="" title="Инстаграм"><i class="fa fa-instagram"></i></a></li>
+						    <li><a href="" title="vk"><img src="img/icons/vk.png" alt="vk"></a></li>
+						    <li><a href="" title="facebook"><img src="img/icons/facebook.png" alt="facebook"></a></li>
+						    <li><a href="" title="twitter"><img src="img/icons/twitter.png" alt="twitter"></a></li>
+						    <li><a href="" title="youtube"><img src="img/icons/youtube.png" alt="youtube"></a></li>
+						    <li><a href="" title="instagram"><img src="img/icons/instagram.png" alt="instagram"></a></li>
 						</ul>
 					</div>
 				</div>
-
-					<div class="col-md-3 footer-feedback p-h-15 m-v-30">
-						<div class="row">
-							<form action="" method="POST" >
-								<div class="col-md-12 p-h-15"><input type="text" name="name" placeholder="Введит имя..."></div>
-								<div class="col-md-12 p-h-15"><textarea type="text" resize="none" placeholder="Введите Ваш текст"></textarea></div>
-								<div class="col-md-12 p-v-15">
-									<span class="btn-def m-auto" style="width: 200px;">
-										<button href="about.html" class="btn-res p-v-10 p-h-15">Отправить заявку</button>
-									</span>
-								</div>
-							</form>
-
-						</div>
-					</div>
 
 				</div>
 
