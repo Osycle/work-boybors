@@ -49,19 +49,16 @@ gulp.task('scripts', () =>
 	return gulp.src([
 			app+'/js/jquery.min.js',
 			app+'/js/smoothscroll.js',
-			app+'/js/bootstrap.js',
-
+			app+'/js/bootstrap.min.js',
 			//app+'/js/TweenMax.min.js',
 			//app+'/js/EasePack.min.js',
 			//app+'/js/TextPlugin.min.js',
 			//app+'/js/konva.min.js',
 			//app+'/js/KonvaPlugin.js',
-
 			//app+'/js/jquery.fractionslider.js',
 			app+'/js/aos.js',
 			app+'/js/wow.js',
 			//app+'/js/skrollr.min.js',
-			
 			//app+'/js/owl.carousel.min.js',
 			app+'/js/jquery.fancybox.js',
 			app+'/js/jquery.jcarousel.js',

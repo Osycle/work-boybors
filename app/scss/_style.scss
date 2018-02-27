@@ -259,6 +259,7 @@ a{
 }
 a:hover, a:active, a:focus{
 	text-decoration: none;
+	color: inherit;
 }
 img,
 button, 
@@ -343,8 +344,7 @@ img[auto]{
 	opacity: 1;
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position: center;
-	background-attachment: fixed;
+	background-position: center; 
 }
 
 .color-white{
@@ -397,23 +397,68 @@ img[auto]{
 	text-indent: 30px;
 }
 
+
+
+
+
+@mixin boxes-items( $width: 75, $item: 3, $style: table, $tag: figure ) {
+
+	$mrow : ( (100 - $width)/($item*2) )+%;
+	
+	margin-left: -#{$mrow};
+	margin-right: -#{$mrow};
+
+	#{$tag}{
+
+		margin-left: $mrow;
+		margin-right: $mrow;
+		width: ($width/$item)+%;
+
+	}
+}
+
+[class*="boxes"]{
+	@extend .letter-none;
+	&>div, &>figure{
+		display: inline-table;
+		vertical-align: top;
+		@include img-auto-adaptive();
+	}		
+}
+
 .boxes-1{
-	@include align-cells( 100, 1, table );
+	@include boxes-items( 100, 1, table );
 }
 .boxes-2{
-	@include align-cells( 90, 2, table );
+	@include boxes-items( 90, 2, table );
 }
 .boxes-3{
-	@include align-cells( 90, 3, table );
+	@include boxes-items( 90, 3, table );
 }
 .boxes-4{
-	@include align-cells( 90, 4, table );
+	@include boxes-items( 90, 4, table );
 }
 .boxes-5{
-	@include align-cells( 90, 5, table );
+	@include boxes-items( 90, 5, table );
 }
 .boxes-6{
-	@include align-cells( 90, 6, table );
+	@include boxes-items( 90, 6, table );
+}
+
+@media ( max-width:991px ){
+	.boxes-6, .boxes-5, .boxes-4{
+		@include boxes-items( 90, 3, table );
+	}
+}
+@media ( max-width:767px ){
+	.boxes-6, .boxes-5, .boxes-4, .boxes-3{
+		@include boxes-items( 90, 2, table );
+	}
+}
+@media ( max-width:480px ){
+	.boxes-6, .boxes-5, .boxes-4, .boxes-3, .boxes-2{
+		@include boxes-items( 100, 1, table );
+	}
 }
 
 .cell-hover{
