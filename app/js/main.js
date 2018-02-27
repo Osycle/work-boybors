@@ -63,8 +63,6 @@ $(function(){
 
 
 
-
-
   // Flikity Carousel
 	function flickityPrevNext( className ) {
 		var carouselWrapper = $( className );
