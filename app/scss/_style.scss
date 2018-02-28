@@ -422,6 +422,7 @@ img[auto]{
 	&>div, &>figure{
 		display: inline-table;
 		vertical-align: top;
+		//margin-left: 0 !important;
 		@include img-auto-adaptive();
 	}		
 }
@@ -616,9 +617,9 @@ img[auto]{
 
 //LISTING
 [class*='list-style']{
-	ul{
+	ul:not([class]){
 		margin: 15px 0;
-		&:not([class]) li{
+		li{
 			padding-left: 15px;
 		}
 		margin: auto 15px;
@@ -639,7 +640,6 @@ img[auto]{
 		li{
 			list-style: none;
 			list-style-position: outside;
-			filter: hue-rotate(60deg);
 			list-style-image: url('../img/icons/list-icon.png');
 		}
 	}
@@ -768,12 +768,13 @@ $header-min-menu: 100px;
 	}
 	li{
 		text-align: center;
-		width: 36%;
+		width: 38%;
 		margin: 0 7%;
 		position: relative;
 		img{
-			width: 100%;
+			width: 17px;
 		}
+		font-size: 0.8em;
 	}
 	a{
 		transition: all 0.3s ease-in-out;
@@ -1149,7 +1150,19 @@ html.mm-opening .mm-menu.mm-fullscreen.mm-opened ~ .mm-slideout{
 }
 
 
-
+.agreementModal{
+	.modal-dialog{
+		width: 800px;
+	}
+	.modal-body{
+		padding-bottom: 30px;
+	}
+  .text-content{
+  	height: 70vh;
+  	overflow: auto;
+  	width: 100%;
+  }
+}
 
 
 
@@ -1202,7 +1215,6 @@ h1{
 	text-transform: uppercase;
 	font-weight: 600;
 	font-size: em(33, 16);
-	padding-bottom: 10px;
 }
 h2{
 	text-transform: uppercase;
@@ -1212,6 +1224,7 @@ h2{
 } 
 h3{
 	font-size: em(20, 16);
+	font-weight: 600;
 }
 h4{
 	font-size: em(18, 16);
@@ -1581,25 +1594,69 @@ a[target="_blank"]{
 		}
 	}
 }
+
 //short-news
-
 .short-news-items{
-
+	@include img-flex-align( center, 150px );
 	figure{
 		background-color: white;
+		color: black;
+		padding: 20px 20px;
+		min-height: 400px;
+		img{
+			border-radius: 5px;
+		}
+		.desc-content{
+			padding: 0 5px;
+		}
+
 	}
 
+}
+.date{
+	color: #8a8a8a;
+}
+
+
+//short-partners
+.short-partners-items{
+	@include img-flex-align( center, 110px );
+}
+
+
+//short-contacts-content
+.short-contacts-content{
+	.soc{
+		li{
+			margin: 15px 0;
+		}
+	}
 }
 
 
 
 
-
-
-
-
-
-
+.short-feedback{
+	h3{
+		font-weight: 300;
+		font-size: 1.8em;
+		color: white;
+	}
+}
+.short-feedback-content{
+	background-color: rgba(white, 0.2);
+	.form-content{
+		input:not([type="checkbox"]){
+			height: 50px;
+		}
+		textarea{
+			min-height: 200px;
+		}
+		button{
+			background-color: black;
+		}
+	}
+}
 
 
 
@@ -1644,7 +1701,7 @@ a[target="_blank"]{
 	}
 }
 
-.soc-footer{
+.soc{
 	li img{
 		width: 35px;
 	}
