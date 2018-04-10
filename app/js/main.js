@@ -33,7 +33,17 @@ $(function(){
 	setTimeout(function(){AOS.refresh()}, 1000);
 
 
+  // Tooltip
+  $('[data-toggle="tooltip"]').tooltip({
+    animated: true,
+    placement: 'bottom',
+    html: true
+  });
+  $('[data-toggle="tooltip"]').hover( function(){
 
+  }, function(){
+
+  } )
 	$("#min-menu").mmenu({
 		extensions 	: [ 
 									"position-bottom", 
