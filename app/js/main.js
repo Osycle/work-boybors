@@ -39,11 +39,7 @@ $(function(){
     placement: 'bottom',
     html: true
   });
-  $('[data-toggle="tooltip"]').hover( function(){
 
-  }, function(){
-
-  } )
 	$("#min-menu").mmenu({
 		extensions 	: [ 
 									"position-bottom", 
@@ -158,7 +154,7 @@ $(function(){
 				cellAlign: 'center',
 				//friction: 1,
 				//selectedAttraction: 1,
-				initialIndex: 0,
+				initialIndex: 1,
 				draggable: true,
 				contain: true,
 				pageDots: false
