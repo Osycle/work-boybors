@@ -102,41 +102,38 @@ $(function(){
 	  x3: 30
 	}
 
+	// var carouselNews = $('.short-news-carousel .carousel-items').flickity({
+	// 	imagesLoaded: true,
+	// 	autoPlay: false,
+	// 	arrowShape: arrowStyle,
+	// 	initialIndex: 2,
+	// 	prevNextButtons: false,
+	// 	draggable: checkSm(),
+	// 	selectedAttraction: 0.1,
+	// 	friction: 1,
+	// 	wrapAround: false,	
+	// 	pageDots: false,
+	// 	contain: false,
+	// 	percentPosition: true,
+	// 	cellAlign: 'center'
+	// });
+	// flickityPrevNext( $('.short-news-carousel') );
 
-	var carouselProductions = $('.short-productions-carousel .carousel-items').flickity({
+	if( $(".short-partners-carousel .carousel-items figure").length > 5 )
+	var carouselPartners = $('.short-partners-carousel .carousel-items').flickity({
 		imagesLoaded: true,
 		autoPlay: false,
-		arrowShape: arrowStyle,
-		prevNextButtons: false,
-		draggable: false,
-		selectedAttraction: 0.1,
-		friction: 1,
-		wrapAround: false,	
-		pageDots: false,
-		contain: false,
-		percentPosition: true,
-		cellAlign: !checkSm() ? '0.025' : 'center'
-	});
-	flickityPrevNext( $('.short-productions-carousel') );
-
-	var carouselNews = $('.short-news-carousel .carousel-items').flickity({
-		imagesLoaded: true,
-		autoPlay: false,
+		pauseAutoPlayOnHover: true,
 		arrowShape: arrowStyle,
 		initialIndex: 2,
-		prevNextButtons: false,
-		draggable: checkSm(),
-		selectedAttraction: 0.1,
-		friction: 1,
-		wrapAround: false,	
+		prevNextButtons: true,
+		draggable: true,
+		wrapAround: true,	
 		pageDots: false,
 		contain: false,
 		percentPosition: true,
 		cellAlign: 'center'
 	});
-	flickityPrevNext( $('.short-news-carousel') );
-
-
 
 
 
