@@ -194,6 +194,9 @@ html{
 	display: flex;
 	align-items: center;
 	height: 100%;
+	&>div{
+		width: 100%;
+	}
 }
 .pie-flex-justify{
   justify-content: center;

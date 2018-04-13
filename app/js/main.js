@@ -87,11 +87,14 @@ $(function(){
 		});
 		carousel.on( 'select.flickity', function() {
 			selected = $(flkty.selectedElement);
-			selected.removeClass("is-next is-prev")
+			//console.log( $(selected).addBack() )
+			selected.siblings().addBack().removeClass("is-prev is-next");
 			selected.next().addClass("is-next");
 			selected.prev().addClass("is-prev");
 		  	//console.log( $(flkty.selectedElement).next() )
 		})
+
+
 	}
 
 
@@ -120,21 +123,39 @@ $(function(){
 	// flickityPrevNext( $('.short-news-carousel') );
 
 	if( $(".short-partners-carousel .carousel-items figure").length > 5 )
-	var carouselPartners = $('.short-partners-carousel .carousel-items').flickity({
-		imagesLoaded: true,
-		autoPlay: false,
-		pauseAutoPlayOnHover: true,
-		arrowShape: arrowStyle,
-		initialIndex: 2,
-		prevNextButtons: true,
-		draggable: true,
-		wrapAround: true,	
-		pageDots: false,
-		contain: false,
-		percentPosition: true,
-		cellAlign: 'center'
-	});
+		$('.short-partners-carousel .carousel-items').flickity({
+			imagesLoaded: true,
+			autoPlay: false,
+			pauseAutoPlayOnHover: true,
+			arrowShape: arrowStyle,
+			initialIndex: 2,
+			prevNextButtons: true,
+			draggable: true,
+			wrapAround: true,	
+			pageDots: false,
+			contain: false,
+			percentPosition: true,
+			cellAlign: 'center'
+		});
 
+	
+	if( $(".short-reviews-carousel .carousel-items figure").length > 1 )
+		$('.short-reviews-carousel .carousel-items').flickity({
+			imagesLoaded: true,
+			autoPlay: false,
+			pauseAutoPlayOnHover: true,
+			arrowShape: arrowStyle,
+			initialIndex: 1,
+			prevNextButtons: false,
+			draggable: true,
+			wrapAround: false,	
+			pageDots: false,
+			contain: false,
+			percentPosition: true,
+			cellAlign: 'center'
+		});
+	flickityPrevNext( $('.short-reviews-carousel') );
+	
 
 
 
@@ -216,6 +237,30 @@ $(function(){
 	});
 
 
+
+	//ytvideo
+	var videoContainer = $(".shares-news-video") || null
+	if( videoContainer )
+	(function(){
+		var selectClass = "is-nav-selected";
+		var mainCell = videoContainer.find(".video-main .video-cell");
+		var navCells = videoContainer.find(".video-nav .video-cell");
+		var selectCellSrc = videoContainer.find(".video-nav .is-nav-selected iframe").attr("src");
+		var mainIframe = mainCell.find("iframe");
+		mainIframe.attr( "src", selectCellSrc )
+		navCells.find("iframe").on( "load", function(){
+			$(this).addClass("in");
+		})
+		navCells.on("click", function( e ){
+			var that = $(this);
+			navCells.filter( "."+selectClass ).removeClass( selectClass );
+			that.closest( ".video-cell" ).addClass( selectClass );
+			var videoSrc = that.find( "iframe" ).attr( "src" );
+			mainIframe.attr( "src", videoSrc );
+			//(is-nav-selected)
+		})
+
+	})();
 
 
 
