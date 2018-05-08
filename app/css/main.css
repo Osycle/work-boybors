@@ -15052,7 +15052,8 @@ html.mm-opening .mm-menu.mm-fullscreen.mm-opened ~ .mm-slideout {
 
 @media (max-width: 991px) {
   .breadcrumb-container {
-    margin-top: 110px; } }
+    margin-top: 110px;
+    text-align: center; } }
 
 /*
 										 ---CONTENT---
@@ -15198,9 +15199,10 @@ a[target="_blank"] {
   @media (max-width: 991px) {
     .rev-slider {
       text-align: center; }
-      .rev-slider .slide-header {
-        left: 0 !important;
-        top: 20% !important; }
+      .rev-slider .banner-icons {
+        display: none; }
+      .rev-slider h1 {
+        font-size: 1.7em !important; }
       .rev-slider .btn-def {
         margin: 15px auto !important; }
       .rev-slider h1, .rev-slider h2 {
