@@ -1146,7 +1146,12 @@ $header-min-menu: 100px;
 }
 
 
-
+.min-lang{
+	li.active{
+		color: black;
+		text-decoration: underline;
+	}
+}
 // MIN-MENU
 .min-menu-header{
 	transition: top 0.3s ease-in-out 0.3s;
@@ -1917,6 +1922,9 @@ a[target="_blank"]{
 	color: #8a8a8a;
 }
 
+.short-partners{
+	overflow: hidden;
+}
 .short-partners-carousel{
 	position: relative;
 	.carousel-items{

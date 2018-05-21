@@ -14794,10 +14794,6 @@ img[auto] {
     .menu .sub-menu-1.style-1 {
       width: 900px; } }
 
-.min-lang li.active {
-  color: black;
-  text-decoration: underline; }
-
 .min-menu-header {
   -webkit-transition: top 0.3s ease-in-out 0.3s;
   -o-transition: top 0.3s ease-in-out 0.3s;
@@ -15411,9 +15407,6 @@ a[target="_blank"] {
 
 .date {
   color: #8a8a8a; }
-
-.short-partners {
-  overflow: hidden; }
 
 .short-partners-carousel {
   position: relative; }
